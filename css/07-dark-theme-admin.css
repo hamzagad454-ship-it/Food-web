@@ -1,0 +1,234 @@
+/* =========================================================
+   SAWA FOOD — 07. Dark theme & admin
+   Sticky header refinements, the dark color theme, and the
+   admin dashboard / tables.
+   ========================================================= */
+/* =========================================================
+   V13 — DARK MODE + STICKY HEADER FINAL FIXES
+   ========================================================= */
+:root {
+  --bg: var(--paper);
+  --header-bg: rgba(250, 250, 247, .94);
+}
+/* Keep the complete header visible while scrolling */
+.premium-ticker {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1201 !important;
+}
+.nav {
+  position: sticky !important;
+  top: 38px !important;
+  z-index: 1200 !important;
+  background: var(--header-bg) !important;
+}
+/* Strong, consistent dark theme */
+body.theme-dark {
+  --bg: #0d1711;
+  --paper: #0d1711;
+  --surface: #17251c;
+  --ink: #edf4ee;
+  --muted: #aab8ae;
+  --line: #2b4033;
+  --brand: #75ce8c;
+  --brand2: #9be1a8;
+  --lime: #b8df70;
+  --header-bg: rgba(15, 27, 20, .96);
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+}
+body.theme-dark .top, body.theme-dark .premium-ticker {
+  background: #07130c !important;
+  color: #dcebdd !important;
+}
+body.theme-dark .nav {
+  background: var(--header-bg) !important;
+  border-color: #2a4033 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .24);
+}
+body.theme-dark .links {
+  color: #c1cec4;
+}
+body.theme-dark .links a:hover, body.theme-dark .links .active {
+  color: var(--brand);
+}
+body.theme-dark .icon, body.theme-dark .switch {
+  background: #1a2b21 !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+body.theme-dark .dialog {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--line);
+}
+body.theme-dark .field, body.theme-dark textarea, body.theme-dark input {
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+body.theme-dark .hero-merged {
+  background: #17291e !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+}
+body.theme-dark .hero-overlay {
+  background: linear-gradient(90deg, rgba(5, 18, 11, .32), rgba(11, 29, 18, .62)) !important;
+}
+body.theme-dark .hero-content h1, body.theme-dark .hero-content p, body.theme-dark .hero-content {
+  color: #f1f7f1 !important;
+}
+body.theme-dark .hero-content p {
+  color: #d0ddd3 !important;
+}
+body.theme-dark .hero-proof {
+  background: rgba(20, 38, 27, .92) !important;
+  color: #edf4ee !important;
+  border: 1px solid var(--line);
+}
+body.theme-dark .hero-proof span {
+  color: var(--muted) !important;
+}
+body.theme-dark .hero-arrow {
+  background: rgba(24, 42, 31, .92) !important;
+  color: #fff !important;
+  border: 1px solid var(--line);
+}
+body.theme-dark .hero-dot.active {
+  background: #edf5ee !important;
+  color: #173d2a !important;
+}
+body.theme-dark .stats, body.theme-dark .stat, body.theme-dark .product, body.theme-dark .card-footer, body.theme-dark .sawa-location-results, body.theme-dark .sawa-result-card, body.theme-dark .detail-thumb, body.theme-dark .detail-main-image, body.theme-dark .size-list span {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+body.theme-dark .stat span, body.theme-dark .pmeta, body.theme-dark .detail-lead, body.theme-dark .detail-origin, body.theme-dark .detail-wa-note {
+  color: var(--muted) !important;
+}
+body.theme-dark .photo {
+  background: #101c15 !important;
+}
+body.theme-dark .badge {
+  background: #b8df70 !important;
+  color: #18331f !important;
+}
+body.theme-dark .fav {
+  background: #1b2d22 !important;
+  color: #d8e4da !important;
+  border: 1px solid var(--line);
+}
+body.theme-dark .card-view {
+  background: rgba(19, 35, 26, .94) !important;
+  color: #f0f6f1 !important;
+  border: 1px solid var(--line);
+}
+body.theme-dark .available, body.theme-dark .quick, body.theme-dark .text-link {
+  color: var(--brand) !important;
+}
+body.theme-dark .text-link {
+  background: var(--surface) !important;
+  border-color: var(--line) !important;
+}
+body.theme-dark .about-company, body.theme-dark .wide-cta, body.theme-dark .factory-story {
+  background: #102a1b !important;
+  color: #edf4ee !important;
+}
+body.theme-dark .about-point {
+  background: #173824 !important;
+  border-color: #315642 !important;
+}
+body.theme-dark .about-copy p, body.theme-dark .feature p, body.theme-dark .wide-cta p, body.theme-dark .factory-story p {
+  color: #bdcfc2 !important;
+}
+body.theme-dark .feature i {
+  background: #203b29 !important;
+  color: var(--brand) !important;
+}
+body.theme-dark .locator, body.theme-dark .sawa-locator {
+  background: linear-gradient(135deg, #1b3023, #16281e) !important;
+  border-color: var(--line) !important;
+}
+body.theme-dark .sawa-map-overlay {
+  background: rgba(20, 37, 28, .95) !important;
+  color: #edf4ee !important;
+  border: 1px solid var(--line);
+}
+body.theme-dark .sawa-real-map {
+  background: #17251c !important;
+}
+body.theme-dark .newsletter {
+  background: #a8d366 !important;
+  color: #132a19 !important;
+}
+body.theme-dark .newsletter p {
+  color: #29432b !important;
+}
+body.theme-dark .subscribe {
+  background: #17251c !important;
+  border: 1px solid #36503e;
+}
+body.theme-dark .subscribe input {
+  color: #edf4ee !important;
+}
+body.theme-dark .footer {
+  background: #07130c !important;
+  color: #edf4ee !important;
+}
+body.theme-dark .footer p, body.theme-dark .footer a {
+  color: #a9b9ad !important;
+}
+body.theme-dark .copyr {
+  border-color: #294235 !important;
+  color: #829589 !important;
+}
+body.theme-dark .product-detail-page {
+  background: #0d1711 !important;
+}
+body.theme-dark .detail-back {
+  background: var(--surface) !important;
+  color: var(--brand) !important;
+  border-color: var(--line) !important;
+}
+body.theme-dark .detail-meta span {
+  background: #1d3826 !important;
+  color: #8cdaa0 !important;
+}
+body.theme-dark .detail-main-image {
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .3) !important;
+}
+body.theme-dark .detail-wa {
+  background: #20bd5c !important;
+}
+/* Admin / tables */
+body.theme-dark .admin {
+  background: #0d1711 !important;
+  color: var(--ink) !important;
+}
+body.theme-dark .admin-nav {
+  background: #07130c !important;
+}
+body.theme-dark .side, body.theme-dark .dash-stat, body.theme-dark .lead-table {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+body.theme-dark th {
+  background: #1b2c22 !important;
+  color: #aebdb2 !important;
+}
+body.theme-dark th,body.theme-dark td {
+  border-color: var(--line) !important;
+}
+body.theme-dark .status {
+  background: #4b3b13 !important;
+  color: #f3ca66 !important;
+}
+/* Mobile: sticky header must not overlap content */
+@media(max-width:700px) {
+  .premium-ticker {
+    height: 36px !important;
+  }
+  .nav {
+    top: 36px !important;
+    height: 68px !important;
+  }
+}

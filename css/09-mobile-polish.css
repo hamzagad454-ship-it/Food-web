@@ -1,0 +1,232 @@
+/* =========================================================
+   SAWA FOOD — 09. Mobile visual polish
+   Mobile-only cleanup: prevents hero controls from colliding,
+   gives the header breathing room, and keeps the hero readable.
+   Desktop layout is intentionally untouched.
+   ========================================================= */
+@media (max-width: 560px) {
+  /* Header: compact, balanced, and never wider than the phone. */
+  #site>.nav {
+    height: 64px !important;
+    padding-inline: 12px !important;
+    gap: 7px !important;
+  }
+  .brand {
+    gap: 8px !important;
+    font-size: 20px !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+  }
+  .seed {
+    width: 27px !important;
+    height: 27px !important;
+    flex: 0 0 27px !important;
+  }
+  .actions {
+    gap: 7px !important;
+    flex: 0 0 auto !important;
+  }
+  .language-trigger {
+    min-width: 108px !important;
+    width: 108px !important;
+    height: 38px !important;
+    padding: 0 8px !important;
+    gap: 6px !important;
+  }
+  .language-icon {
+    width: 23px !important;
+    height: 23px !important;
+    flex-basis: 23px !important;
+  }
+  .language-current {
+    font-size: 10.5px !important;
+  }
+  .actions .icon {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  /* Hero: shorter and cleaner on a phone. */
+  .hero-merged {
+    width: calc(100% - 24px) !important;
+    height: 500px !important;
+    min-height: 500px !important;
+    margin-top: 10px !important;
+    margin-bottom: 46px !important;
+    border-radius: 18px !important;
+  }
+  .hero-merged .hero-slide {
+    align-items: flex-end !important;
+  }
+  .hero-merged .hero-overlay, html[dir="rtl"] .hero-merged .hero-overlay {
+    background: linear-gradient( 180deg, rgba(5, 25, 16, .08) 0%, rgba(5, 25, 16, .18) 34%, rgba(5, 25, 16, .72) 66%, rgba(5, 25, 16, .94) 100% ) !important;
+  }
+  .hero-merged .hero-content, html[dir="rtl"] .hero-merged .hero-content {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 20px 78px !important;
+    align-self: flex-end !important;
+    text-align: start !important;
+  }
+  .hero-merged .hero-content .eyebrow {
+    font-size: 10px !important;
+    letter-spacing: 1.2px !important;
+    margin-bottom: 8px !important;
+    color: #7ee19a !important;
+  }
+  .hero-merged .hero-content h1, html[dir="rtl"] body.ar .hero-merged .hero-content h1 {
+    min-height: 0 !important;
+    max-width: 330px !important;
+    font-size: 34px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -1.2px !important;
+    margin: 0 0 11px !important;
+    color: #fff !important;
+    display: block !important;
+  }
+  .hero-merged .hero-content h1:after {
+    width: 42px !important;
+    height: 3px !important;
+    margin-top: 11px !important;
+  }
+  .hero-merged .hero-content p, html[dir="rtl"] body.ar .hero-merged .hero-content p {
+    min-height: 0 !important;
+    max-width: 350px !important;
+    font-size: 13.5px !important;
+    line-height: 1.58 !important;
+    margin: 0 0 14px !important;
+    color: rgba(255, 255, 255, .82) !important;
+  }
+  .hero-merged .hero-actions {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 7px !important;
+  }
+  .hero-merged .hero-actions .btn {
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 9px 11px !important;
+    border-radius: 999px !important;
+    font-size: 10.5px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  .hero-merged .hero-actions .btn.light {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, .45) !important;
+    background: rgba(255, 255, 255, .10) !important;
+  }
+  /* Proof card gets its own space instead of competing with dots. */
+  .hero-merged .hero-proof, html[dir="rtl"] .hero-merged .hero-proof {
+    left: 14px !important;
+    right: auto !important;
+    top: 14px !important;
+    bottom: auto !important;
+    min-width: 104px !important;
+    padding: 8px 11px !important;
+    border-radius: 12px !important;
+    background: rgba(11, 35, 23, .72) !important;
+    border: 1px solid rgba(255, 255, 255, .16) !important;
+    color: #fff !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .20) !important;
+  }
+  .hero-merged .hero-proof b {
+    font-size: 20px !important;
+    color: #83df9a !important;
+  }
+  .hero-merged .hero-proof span {
+    font-size: 9px !important;
+    color: rgba(255, 255, 255, .72) !important;
+  }
+  /* Controls sit on the image edges; dots have a dedicated bottom row. */
+  .hero-merged .hero-controls {
+    inset-inline: 9px !important;
+    top: 43% !important;
+  }
+  .hero-merged .hero-arrow {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 20px !important;
+  }
+  .hero-merged .hero-dots, html[dir="rtl"] .hero-merged .hero-dots {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 15px !important;
+    transform: translateX(-50%) !important;
+    padding: 5px 7px !important;
+    gap: 3px !important;
+    border-radius: 999px !important;
+  }
+  .hero-merged .hero-dot {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 8px !important;
+    border-radius: 7px !important;
+  }
+  .hero-merged .hero-dot.active {
+    width: 26px !important;
+  }
+  .hero-merged .hero-progress {
+    height: 2px !important;
+  }
+}
+@media (max-width:380px) {
+  #site>.nav {
+    padding-inline: 10px !important;
+  }
+  .brand {
+    font-size: 18px !important;
+  }
+  .language-trigger {
+    min-width: 98px !important;
+    width: 98px !important;
+  }
+  .hero-merged .hero-content, html[dir="rtl"] .hero-merged .hero-content {
+    padding-inline: 17px !important;
+  }
+  .hero-merged .hero-content h1, html[dir="rtl"] body.ar .hero-merged .hero-content h1 {
+    font-size: 31px !important;
+  }
+  .hero-merged .hero-actions .btn {
+    font-size: 9.5px !important;
+    padding-inline: 9px !important;
+  }
+}
+/* WhatsApp compact size override */
+.whatsapp-float {
+  width: 47px !important;
+  height: 47px !important;
+  min-width: 47px !important;
+  min-height: 47px !important;
+  box-sizing: border-box !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.whatsapp-float .whatsapp-float-icon, .whatsapp-float-icon {
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.whatsapp-float:before {
+  inset: -4px !important;
+}
+@media(max-width:560px) {
+  .whatsapp-float {
+    width: 47px !important;
+    height: 47px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+  }
+}

@@ -1,0 +1,339 @@
+/* =========================================================
+   SAWA FOOD — 06. Layout fixes
+   Centered containers, slider sizing, equal-height product
+   cards, product detail display, Arabic alignment, and
+   responsive corrections.
+   ========================================================= */
+/* =========================================================
+   SAWA FOOD V12 — FINAL UI / LAYOUT FIXES
+   ========================================================= */
+html,body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+/* One reliable centered content system */
+:root {
+  --v12-max: 1320px;
+  --v12-gutter: clamp(16px, 3vw, 32px);
+}
+.shell,.section,.stats,.hero,.newsletter,.locator,.why,.wide-cta {
+  width: min(calc(100% - (var(--v12-gutter) * 2)), var(--v12-max)) !important;
+  margin-inline: auto !important;
+}
+.section {
+  position: relative;
+}
+/* Header stays centered while the bar itself spans the viewport */
+.nav {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-inline: max(var(--v12-gutter), calc((100vw - var(--v12-max))/2 + var(--v12-gutter))) !important;
+}
+/* Slider: stable height, proper centering, no squeezed content */
+.hero-merged {
+  width: min(calc(100% - (var(--v12-gutter) * 2)), var(--v12-max)) !important;
+  height: clamp(500px, 42vw, 590px) !important;
+  min-height: 500px !important;
+  margin-top: 22px !important;
+  margin-bottom: 72px !important;
+  overflow: hidden !important;
+}
+.hero-merged .hero-slide {
+  align-items: center !important;
+  justify-content: flex-end !important;
+}
+.hero-merged .hero-content {
+  width: min(54%, 660px) !important;
+  max-width: 660px !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 56px clamp(28px, 6vw, 82px) 56px 32px !important;
+  box-sizing: border-box !important;
+}
+html[dir="rtl"] .hero-merged .hero-content {
+  padding: 56px 32px 56px clamp(28px, 6vw, 82px) !important;
+}
+.hero-merged .hero-content h1 {
+  margin: 0 0 16px !important;
+  line-height: 1.12 !important;
+  min-height: 0 !important;
+}
+.hero-merged .hero-content p {
+  margin: 0 0 24px !important;
+  min-height: 0 !important;
+}
+.hero-merged .hero-actions {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+}
+.hero-merged .hero-proof {
+  bottom: 24px !important;
+}
+.hero-merged .hero-controls {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+.hero-merged .hero-dots {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  bottom: 18px !important;
+}
+html[dir="rtl"] .hero-merged .hero-dots {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+/* Section headings line up consistently */
+.section-head {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+}
+.section-head>div {
+  flex: 1;
+  min-width: 0;
+}
+.section-head .text-link {
+  flex: 0 0 auto;
+}
+/* Product grid: equal cards and no broken stretching */
+.products {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  align-items: stretch !important;
+}
+.product {
+  min-width: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  cursor: pointer !important;
+}
+.product .photo {
+  height: 235px !important;
+  flex: 0 0 235px !important;
+}
+.product .pbody {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+.product .card-footer {
+  margin-top: auto !important;
+}
+.product:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand) 45%, transparent);
+  outline-offset: 3px;
+}
+/* Category cards */
+.cats {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+.cat {
+  min-width: 0 !important;
+}
+/* Product detail: force the detail screen to actually show */
+#productDetail[hidden] {
+  display: none !important;
+}
+#site.product-detail-open #productDetail {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+#site.product-detail-open #home, #site.product-detail-open>.nav, #site.product-detail-open>.top, #site.product-detail-open>footer {
+  display: none !important;
+}
+.product-detail-page {
+  width: 100% !important;
+  min-height: 100vh !important;
+  padding: 0 0 90px !important;
+}
+.product-detail-shell {
+  width: min(calc(100% - (var(--v12-gutter) * 2)), var(--v12-max)) !important;
+  margin-inline: auto !important;
+  padding: 28px 0 80px !important;
+}
+.product-detail-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr) !important;
+  gap: 56px !important;
+}
+.detail-gallery,.detail-copy {
+  min-width: 0;
+}
+.detail-main-image {
+  width: 100% !important;
+  height: clamp(420px, 42vw, 590px) !important;
+}
+.detail-main-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+.detail-copy {
+  padding-top: 18px !important;
+}
+.detail-copy h1 {
+  overflow-wrap: anywhere;
+}
+.detail-thumbs {
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.factory-story {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr) !important;
+}
+/* Arabic alignment */
+body.ar .section-head {
+  text-align: right;
+}
+body.ar .product .pbody,body.ar .product .card-footer {
+  text-align: right;
+}
+body.ar .detail-copy {
+  text-align: right;
+}
+body.ar .detail-meta {
+  justify-content: flex-start;
+}
+body.ar .detail-origin {
+  flex-wrap: wrap;
+}
+/* Responsive */
+@media(max-width:1050px) {
+  .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .cats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .hero-merged {
+    height: 540px !important;
+    min-height: 500px !important;
+  }
+  .hero-merged .hero-content {
+    width: min(62%, 650px) !important;
+    padding-inline: 42px !important;
+  }
+}
+@media(max-width:900px) {
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .hero-merged {
+    height: 650px !important;
+    min-height: 600px !important;
+  }
+  .hero-merged .hero-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: auto !important;
+    padding: 330px 28px 62px !important;
+    align-self: flex-end !important;
+  }
+  html[dir="rtl"] .hero-merged .hero-content {
+    padding: 330px 28px 62px !important;
+  }
+  .hero-merged .hero-dots {
+    bottom: 17px !important;
+  }
+  .hero-merged .hero-proof {
+    bottom: 17px !important;
+  }
+  .product-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .detail-gallery {
+    position: static !important;
+  }
+  .detail-main-image {
+    height: 480px !important;
+  }
+  .factory-story {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media(max-width:560px) {
+  .shell,.section,.stats,.hero,.newsletter,.locator,.why,.wide-cta {
+    width: calc(100% - 24px) !important;
+  }
+  .nav {
+    padding-inline: 12px !important;
+  }
+  .products {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+  .product .photo {
+    height: 170px !important;
+    flex-basis: 170px !important;
+  }
+  .cats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+  .section-head {
+    align-items: flex-start !important;
+  }
+  .section-head .text-link {
+    font-size: 11px;
+  }
+  .hero-merged {
+    width: calc(100% - 24px) !important;
+    height: 610px !important;
+    min-height: 560px !important;
+    border-radius: 18px !important;
+  }
+  .hero-merged .hero-content {
+    padding: 300px 20px 54px !important;
+  }
+  html[dir="rtl"] .hero-merged .hero-content {
+    padding: 300px 20px 54px !important;
+  }
+  .hero-merged .hero-content h1 {
+    font-size: 40px !important;
+  }
+  .hero-merged .hero-content p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+  .hero-merged .hero-actions {
+    flex-wrap: wrap !important;
+  }
+  .hero-merged .hero-proof {
+    left: 14px !important;
+    right: auto !important;
+    bottom: 15px !important;
+  }
+  html[dir="rtl"] .hero-merged .hero-proof {
+    right: 14px !important;
+    left: auto !important;
+  }
+  .hero-merged .hero-dots {
+    bottom: 15px !important;
+  }
+  .detail-main-image {
+    height: 350px !important;
+  }
+  .product-detail-shell {
+    width: calc(100% - 24px) !important;
+    padding-top: 18px !important;
+  }
+}

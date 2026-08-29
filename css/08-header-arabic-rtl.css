@@ -1,0 +1,415 @@
+/* =========================================================
+   SAWA FOOD — 08. Fixed header & Arabic/RTL refinements
+   Truly-fixed site header while scrolling, Arabic hero
+   positioning and typeface, RTL navigation/text direction,
+   and dark-mode support for the Arabic hero.
+   ========================================================= */
+/* =========================================================
+   V14 — FINAL HEADER + ARABIC HERO FIX
+   ========================================================= */
+:root {
+  --sawa-header-height: 120px;
+  --sawa-ticker-height: 38px;
+  --sawa-nav-height: 82px;
+}
+/* Truly fixed site header: it stays on screen during page scrolling. */
+#site {
+  padding-top: var(--sawa-header-height);
+}
+.premium-ticker {
+  position: fixed !important;
+  inset: 0 0 auto 0 !important;
+  width: 100% !important;
+  height: var(--sawa-ticker-height) !important;
+  z-index: 2200 !important;
+}
+#site>.nav {
+  position: fixed !important;
+  top: var(--sawa-ticker-height) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: var(--sawa-nav-height) !important;
+  z-index: 2199 !important;
+}
+#site.product-detail-open {
+  padding-top: 0;
+}
+#site.product-detail-open>.premium-ticker, #site.product-detail-open>.nav {
+  display: none !important;
+}
+/* Arabic: put the hero copy on the right and use an Arabic-native typeface. */
+html[dir="rtl"] body.ar .hero-merged .hero-slide {
+  justify-content: flex-start !important;
+}
+html[dir="rtl"] body.ar .hero-merged .hero-content {
+  margin-inline-start: 0 !important;
+  margin-inline-end: auto !important;
+  width: min(56%, 680px) !important;
+  padding: 58px 5% 58px 7% !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+html[dir="rtl"] body.ar .hero-merged .hero-overlay {
+  background: linear-gradient(270deg, rgba(233, 242, 214, .96) 0%, rgba(233, 242, 214, .88) 34%, rgba(233, 242, 214, .30) 58%, rgba(8, 35, 22, .10) 100%) !important;
+}
+html[dir="rtl"] body.ar .hero-merged .hero-content h1 {
+  font-family: 'Noto Kufi Arabic', sans-serif !important;
+  font-size: clamp(34px, 4.2vw, 58px) !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
+  color: #173d2a !important;
+  max-width: 650px !important;
+}
+html[dir="rtl"] body.ar .hero-merged .hero-content p {
+  font-family: 'Noto Kufi Arabic', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 2 !important;
+  color: #42564b !important;
+  max-width: 560px !important;
+}
+html[dir="rtl"] body.ar .hero-merged .hero-content .eyebrow {
+  font-family: 'Noto Kufi Arabic', sans-serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: #16824d !important;
+}
+html[dir="rtl"] body.ar .hero-merged .hero-actions {
+  justify-content: flex-start !important;
+  direction: rtl !important;
+}
+html[dir="rtl"] body.ar .hero-merged .hero-actions .btn {
+  font-family: 'Noto Kufi Arabic', sans-serif !important;
+  font-size: 13px !important;
+}
+html[dir="rtl"] body.ar .hero-merged .hero-content h1:after {
+  transform-origin: right center !important;
+  margin-right: 0 !important;
+  margin-left: auto !important;
+}
+/* Arabic navigation and general text direction. */
+html[dir="rtl"] body.ar .links {
+  direction: rtl;
+}
+html[dir="rtl"] body.ar .actions {
+  direction: ltr;
+}
+html[dir="rtl"] body.ar .section-head, html[dir="rtl"] body.ar .why, html[dir="rtl"] body.ar .locator, html[dir="rtl"] body.ar .wide-cta, html[dir="rtl"] body.ar .factory-story {
+  direction: rtl;
+}
+/* Dark mode keeps Arabic hero readable too. */
+body.theme-dark html[dir="rtl"] .hero-merged .hero-content h1, html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content h1 {
+  color: #f0f7f1 !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content p {
+  color: #d1ded5 !important;
+}
+@media(max-width:900px) {
+  :root {
+    --sawa-header-height: 104px;
+    --sawa-ticker-height: 36px;
+    --sawa-nav-height: 68px;
+  }
+  #site {
+    padding-top: var(--sawa-header-height);
+  }
+  html[dir="rtl"] body.ar .hero-merged .hero-content {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 330px 28px 62px !important;
+    text-align: right !important;
+    align-self: flex-end !important;
+  }
+  html[dir="rtl"] body.ar .hero-merged .hero-content h1 {
+    font-size: clamp(32px, 7vw, 50px) !important;
+    line-height: 1.5 !important;
+  }
+}
+@media(max-width:560px) {
+  :root {
+    --sawa-header-height: 100px;
+    --sawa-ticker-height: 36px;
+    --sawa-nav-height: 64px;
+  }
+  html[dir="rtl"] body.ar .hero-merged .hero-content {
+    padding: 300px 20px 54px !important;
+  }
+  html[dir="rtl"] body.ar .hero-merged .hero-content h1 {
+    font-size: 35px !important;
+    line-height: 1.55 !important;
+  }
+  html[dir="rtl"] body.ar .hero-merged .hero-content p {
+    font-size: 14px !important;
+    line-height: 1.9 !important;
+  }
+}
+/* Premium custom language selector — no native browser dropdown */
+.language-picker {
+  position: relative;
+  z-index: 1200;
+}
+.language-trigger {
+  height: 42px;
+  min-width: 136px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 11px;
+  border: 1px solid rgba(119, 174, 137, .42);
+  border-radius: 999px;
+  background: rgba(16, 39, 27, .78);
+  color: #f2f7f2;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .10);
+  transition: all .2s ease;
+  backdrop-filter: blur(10px);
+}
+.language-trigger:hover,.language-picker.is-open .language-trigger {
+  border-color: #79c18e;
+  background: #173a28;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
+  transform: translateY(-1px);
+}
+.language-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7be08f, #43b86a);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 3px 10px rgba(76, 190, 111, .28);
+}
+.language-current {
+  flex: 1;
+  text-align: left;
+  font: 800 12px/1 Manrope, sans-serif;
+  white-space: nowrap;
+}
+.language-chevron {
+  font-size: 14px;
+  color: #a9b8ae;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+.language-picker.is-open .language-chevron {
+  transform: rotate(180deg);
+  color: #fff;
+}
+.language-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 190px;
+  padding: 7px;
+  border: 1px solid rgba(126, 169, 140, .25);
+  border-radius: 16px;
+  background: rgba(15, 31, 23, .98);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .30);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-7px) scale(.98);
+  transform-origin: top right;
+  transition: opacity .16s ease, transform .16s ease, visibility .16s ease;
+  backdrop-filter: blur(14px);
+}
+.language-picker.is-open .language-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+.language-option {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px 1fr 18px;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 9px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #eaf2ec;
+  text-align: left;
+  cursor: pointer;
+  transition: background .16s ease, transform .16s ease;
+}
+.language-option:hover {
+  background: rgba(117, 205, 141, .12);
+  transform: translateX(2px);
+}
+.language-option.is-selected {
+  background: linear-gradient(90deg, rgba(80, 190, 109, .18), rgba(80, 190, 109, .06));
+}
+.language-flag {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #203d2c;
+  color: #8be49e;
+  font: 900 10px/1 Manrope, sans-serif;
+  border: 1px solid rgba(139, 228, 158, .15);
+}
+.language-option>span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.language-option b {
+  font: 800 12px/1.25 Manrope, sans-serif;
+  color: #f4f8f5;
+}
+.language-option small {
+  margin-top: 2px;
+  font: 500 9px/1.2 Manrope, sans-serif;
+  color: #8f9f95;
+}
+.language-option i {
+  font-style: normal;
+  color: #71d38b;
+  font-size: 13px;
+  opacity: 0;
+  transform: scale(.7);
+  transition: .15s ease;
+}
+.language-option.is-selected i {
+  opacity: 1;
+  transform: scale(1);
+}
+html[dir="rtl"] .language-current {
+  text-align: right;
+}
+html[dir="rtl"] .language-menu {
+  right: auto;
+  left: 0;
+  transform-origin: top left;
+}
+html[dir="rtl"] .language-option {
+  text-align: right;
+}
+html[dir="rtl"] .language-option:hover {
+  transform: translateX(-2px);
+}
+@media(max-width:640px) {
+  .language-trigger {
+    height: 38px;
+    min-width: 112px;
+    padding: 0 9px;
+    gap: 7px;
+  }
+  .language-current {
+    font-size: 11px;
+  }
+  .language-menu {
+    width: 175px;
+  }
+}
+/* =========================================================
+   V15 — Arabic hero readability in LIGHT mode
+   Keep the white theme clean and ensure Arabic copy never
+   inherits white text from hero/theme rules.
+   ========================================================= */
+html[dir="rtl"] body.ar:not(.theme-dark) .hero-merged .hero-content, html[dir="rtl"] body.ar:not(.theme-dark) .hero-merged .hero-content h1 {
+  color: #173d2a !important;
+}
+html[dir="rtl"] body.ar:not(.theme-dark) .hero-merged .hero-content p {
+  color: #405349 !important;
+}
+html[dir="rtl"] body.ar:not(.theme-dark) .hero-merged .hero-content .eyebrow {
+  color: #137347 !important;
+}
+html[dir="rtl"] body.ar:not(.theme-dark) .hero-merged .hero-content h1:after {
+  background: #156b43 !important;
+}
+html[dir="rtl"] body.ar:not(.theme-dark) .hero-merged .hero-overlay {
+  background: linear-gradient(270deg, rgba(240, 244, 225, .98) 0%, rgba(240, 244, 225, .93) 36%, rgba(240, 244, 225, .58) 57%, rgba(8, 35, 22, .08) 100%) !important;
+}
+html[dir="rtl"] body.ar:not(.theme-dark) .hero-merged .hero-actions .btn.light {
+  color: #156b43 !important;
+  border-color: #9bb49e !important;
+  background: rgba(255, 255, 255, .42) !important;
+}
+/* =========================================================
+   V16 — HARD LIGHT-MODE ARABIC HERO READABILITY
+   The previous light-mode rule could be overridden by theme/layout
+   patches. This class is applied by JS and is intentionally last.
+   ========================================================= */
+body.ar.hero-light-ar .hero-merged .hero-content, body.ar.hero-light-ar .hero-merged .hero-content h1, body.ar.hero-light-ar .hero-merged .hero-content p, body.ar.hero-light-ar .hero-merged .hero-content .eyebrow {
+  color: #173d2a !important;
+  text-shadow: none !important;
+}
+body.ar.hero-light-ar .hero-merged .hero-content h1 {
+  font-family: 'Noto Kufi Arabic', sans-serif !important;
+  font-weight: 700 !important;
+}
+body.ar.hero-light-ar .hero-merged .hero-content p {
+  color: #405349 !important;
+}
+body.ar.hero-light-ar .hero-merged .hero-content .eyebrow {
+  color: #137347 !important;
+}
+body.ar.hero-light-ar .hero-merged .hero-content h1:after {
+  background: #156b43 !important;
+}
+body.ar.hero-light-ar .hero-merged .hero-actions .btn.light {
+  color: #156b43 !important;
+  border-color: #8fae97 !important;
+  background: rgba(255, 255, 255, .62) !important;
+}
+body.ar.hero-light-ar .hero-merged .hero-overlay {
+  background: linear-gradient(270deg, rgba(245, 247, 235, .99) 0%, rgba(245, 247, 235, .94) 42%, rgba(245, 247, 235, .64) 64%, rgba(8, 35, 22, .07) 100%) !important;
+}
+@media(max-width:900px) {
+  body.ar.hero-light-ar .hero-merged .hero-overlay {
+    background: linear-gradient(0deg, rgba(245, 247, 235, .99) 0%, rgba(245, 247, 235, .95) 46%, rgba(245, 247, 235, .28) 78%, rgba(8, 35, 22, .05) 100%) !important;
+  }
+}
+/* =========================================================
+   V17 — FINAL DARK-MODE ARABIC HERO READABILITY
+   Dark mode must use its own dark overlay + light Arabic copy.
+   These rules are intentionally last so no earlier hero/light
+   rules can override them.
+   ========================================================= */
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content, html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content h1, html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content p, html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content .eyebrow {
+  text-shadow: none !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content h1 {
+  color: #f4f8f5 !important;
+  font-family: 'Noto Kufi Arabic', sans-serif !important;
+  font-weight: 700 !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content p {
+  color: #d8e4dc !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content .eyebrow {
+  color: #8fdda3 !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-content h1:after {
+  background: #79cf8d !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-overlay {
+  background: linear-gradient(270deg, rgba(7, 20, 13, .94) 0%, rgba(10, 29, 18, .88) 38%, rgba(8, 25, 16, .58) 61%, rgba(5, 18, 11, .18) 100%) !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-actions .btn.light {
+  color: #e8f4eb !important;
+  border-color: #567463 !important;
+  background: rgba(18, 43, 29, .72) !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-proof {
+  background: rgba(20, 38, 27, .94) !important;
+  color: #edf4ee !important;
+  border-color: #34503f !important;
+}
+html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-proof span {
+  color: #aebdb3 !important;
+}
+@media(max-width:900px) {
+  html[dir="rtl"] body.ar.theme-dark .hero-merged .hero-overlay {
+    background: linear-gradient(0deg, rgba(7, 20, 13, .96) 0%, rgba(10, 29, 18, .91) 45%, rgba(8, 25, 16, .45) 78%, rgba(5, 18, 11, .10) 100%) !important;
+  }
+}

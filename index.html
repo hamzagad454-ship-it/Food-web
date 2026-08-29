@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sawa Food connects premium food brands, distributors, retailers, and customers across the region."
+    />
+    <title>Sawa Food — Better food, brought closer</title>
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Site styles (order matters: each file can override the ones before it) -->
+    <link rel="stylesheet" href="css/01-base.css" />
+    <link rel="stylesheet" href="css/02-page-structure.css" />
+    <link rel="stylesheet" href="css/03-locator-hero-ticker.css" />
+    <link rel="stylesheet" href="css/04-sticky-header-details.css" />
+    <link rel="stylesheet" href="css/05-global-polish.css" />
+    <link rel="stylesheet" href="css/06-fixed-layout.css" />
+    <link rel="stylesheet" href="css/07-dark-theme-admin.css" />
+    <link rel="stylesheet" href="css/08-header-arabic-rtl.css" />
+    <link rel="stylesheet" href="css/09-mobile-polish.css" />
+    <link rel="stylesheet" href="css/10-partner-notification.css" />
+    <link rel="stylesheet" href="css/11-social-media.css" />
+    <!-- Map library -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- =========================================================
+       SITE SHELL
+       ========================================================= -->
+    <div id="site">
+      <div class="top premium-ticker" aria-label="Sawa Food highlights">
+        <div class="ticker-track" id="tickerTrack">
+          <span>✦ Trusted quality from selected partners</span
+          ><span>✦ 120+ food brands</span><span>✦ Presence in 5 markets</span
+          ><span>✦ 1,400+ retail partners</span
+          ><span>✦ Distribution and partnerships that grow</span>
+          <span>✦ Trusted quality from selected partners</span
+          ><span>✦ 120+ food brands</span><span>✦ Presence in 5 markets</span
+          ><span>✦ 1,400+ retail partners</span
+          ><span>✦ Distribution and partnerships that grow</span>
+        </div>
+      </div>
+      <header class="shell nav">
+        <a class="brand" href="#home"><img src="img/logo.png" alt="" style="width: 50px; border-radius: 50%;"></a>
+        <nav class="links">
+          <a class="active" href="#home" data-t="home">Home</a
+          ><a href="#products" data-t="products">Products</a
+          ><a href="#brands" data-t="manufacturers">Manufacturers</a
+          ><a href="#stores" data-t="where">Where to buy</a
+          ><a href="#partner" data-t="partner">Partner with us</a>
+        </nav>
+        <div class="actions">
+          <div class="language-picker" id="languagePicker">
+            <button
+              class="language-trigger"
+              id="languageTrigger"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-label="Language"
+            >
+              <span class="language-icon" aria-hidden="true">文</span>
+              <span class="language-current" id="languageCurrent">English</span>
+              <span class="language-chevron" aria-hidden="true">⌄</span>
+            </button>
+            <div
+              class="language-menu"
+              id="languageMenu"
+              role="listbox"
+              aria-label="Choose language"
+            >
+              <button
+                type="button"
+                class="language-option"
+                data-lang-option="en"
+                role="option"
+              >
+                <span class="language-flag">EN</span
+                ><span><b>English</b><small>English</small></span
+                ><i>✓</i>
+              </button>
+              <button
+                type="button"
+                class="language-option"
+                data-lang-option="ar"
+                role="option"
+              >
+                <span class="language-flag">ع</span
+                ><span><b>العربية</b><small>Arabic</small></span
+                ><i>✓</i>
+              </button>
+              <button
+                type="button"
+                class="language-option"
+                data-lang-option="fr"
+                role="option"
+              >
+                <span class="language-flag">FR</span
+                ><span><b>Français</b><small>French</small></span
+                ><i>✓</i>
+              </button>
+            </div>
+          </div>
+          <button class="icon" id="themeBtn" aria-label="Theme">◐</button
+          ><button class="icon mobile" id="menuBtn" aria-label="Menu">
+            ☰
+          </button>
+        </div>
+      </header>
+      <!-- Main marketing site -->
+      <main id="home">
+        <section
+          class="shell hero hero-merged"
+          id="heroCarousel"
+          aria-label="Sawa Food highlights"
+        >
+          <div class="hero-slides" id="heroSlides">
+            <article
+              class="hero-slide hero-slide-content active"
+              data-hero-image="hero1"
+              style="
+                --hero-bg: url(&quot;https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1800&q=90&quot;);
+              "
+            >
+              <div class="hero-overlay"></div>
+              <div class="hero-content">
+                <div class="eyebrow" data-hero-key="s1eyebrow">
+                  Curated for every table
+                </div>
+                <h1 data-hero-key="s1title">Better food, brought closer.</h1>
+                <p data-hero-key="s1text">
+                  We bring trusted food products closer to every market through
+                  a strong regional distribution network and trusted partners.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="#products" data-hero-key="explore"
+                    >Explore products <span>→</span></a
+                  ><a
+                    class="btn light"
+                    href="#partner"
+                    data-hero-key="wholesale"
+                    >Wholesale inquiry</a
+                  >
+                </div>
+              </div>
+              <div class="hero-proof">
+                <b data-hero-key="s1proof">120+</b
+                ><span data-hero-key="s1proofText">trusted food brands</span>
+              </div>
+            </article>
+            <article
+              class="hero-slide hero-slide-content"
+              data-hero-image="hero2"
+              style="
+                --hero-bg: url(&quot;https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=90&quot;);
+              "
+            >
+              <div class="hero-overlay"></div>
+              <div class="hero-content">
+                <div class="eyebrow" data-hero-key="s2eyebrow">
+                  Manufacturing & supply network
+                </div>
+                <h1 data-hero-key="s2title">
+                  Strong partners behind every product.
+                </h1>
+                <p data-hero-key="s2text">
+                  We work with selected manufacturers and supply partners to
+                  protect quality, continuity and product availability.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="#brands" data-hero-key="s2button"
+                    >Meet our manufacturers <span>→</span></a
+                  ><a
+                    class="btn light"
+                    href="#partner"
+                    data-hero-key="wholesale"
+                    >Wholesale inquiry</a
+                  >
+                </div>
+              </div>
+              <div class="hero-proof">
+                <b data-hero-key="s2proof">∞</b
+                ><span data-hero-key="s2proofText"
+                  >manufacturing & supply partners</span
+                >
+              </div>
+            </article>
+            <article
+              class="hero-slide hero-slide-content"
+              data-hero-image="hero3"
+              style="
+                --hero-bg: url(&quot;https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1800&q=90&quot;);
+              "
+            >
+              <div class="hero-overlay"></div>
+              <div class="hero-content">
+                <div class="eyebrow" data-hero-key="s3eyebrow">
+                  Regional reach
+                </div>
+                <h1 data-hero-key="s3title">
+                  From local markets to the region.
+                </h1>
+                <p data-hero-key="s3text">
+                  A network across 5 markets connecting brands, retailers and
+                  distributors in one growing ecosystem.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="#stores" data-hero-key="s3button"
+                    >Find where to buy <span>→</span></a
+                  ><a
+                    class="btn light"
+                    href="#partner"
+                    data-hero-key="wholesale"
+                    >Wholesale inquiry</a
+                  >
+                </div>
+              </div>
+              <div class="hero-proof">
+                <b data-hero-key="s3proof">5</b
+                ><span data-hero-key="s3proofText">markets served</span>
+              </div>
+            </article>
+            <article
+              class="hero-slide hero-slide-content"
+              data-hero-image="hero4"
+              style="
+                --hero-bg: url(&quot;https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=90&quot;);
+              "
+            >
+              <div class="hero-overlay"></div>
+              <div class="hero-content">
+                <div class="eyebrow" data-hero-key="s4eyebrow">
+                  Partnerships that grow
+                </div>
+                <h1 data-hero-key="s4title">Helping brands reach further.</h1>
+                <p data-hero-key="s4text">
+                  From distribution to retail reach, we build long-term
+                  partnerships that help great products grow.
+                </p>
+                <div class="hero-actions">
+                  <a class="btn" href="#partner" data-hero-key="s4button"
+                    >Start a partnership <span>→</span></a
+                  ><a class="btn light" href="#products" data-hero-key="explore"
+                    >Explore products <span>→</span></a
+                  >
+                </div>
+              </div>
+              <div class="hero-proof">
+                <b data-hero-key="s4proof">1,400+</b
+                ><span data-hero-key="s4proofText">retail partners</span>
+              </div>
+            </article>
+          </div>
+          <div class="hero-controls">
+            <button
+              class="hero-arrow"
+              id="heroPrev"
+              aria-label="Previous slide"
+            >
+              ‹
+            </button>
+            <button class="hero-arrow" id="heroNext" aria-label="Next slide">
+              ›
+            </button>
+          </div>
+          <div class="hero-dots" id="heroDots" aria-label="Choose slide">
+            <button class="hero-dot active" aria-label="Slide 1">
+              <span>01</span></button
+            ><button class="hero-dot" aria-label="Slide 2">
+              <span>02</span></button
+            ><button class="hero-dot" aria-label="Slide 3">
+              <span>03</span></button
+            ><button class="hero-dot" aria-label="Slide 4">
+              <span>04</span>
+            </button>
+          </div>
+          <div class="hero-progress"><span id="heroProgress"></span></div>
+        </section>
+        <section class="shell stats">
+          <div class="stat">
+            <b>250+</b><span data-t="stat1">curated products</span>
+          </div>
+          <div class="stat">
+            <b>120+</b><span data-t="stat2">trusted brands</span>
+          </div>
+          <div class="stat">
+            <b>5</b><span data-t="stat3">markets served</span>
+          </div>
+          <div class="stat">
+            <b>1,400+</b><span data-t="stat4">retail partners</span>
+          </div>
+        </section>
+
+        <section class="shell section" id="products">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow" data-t="selected">Selected for you</div>
+              <h2 data-t="featured">Featured products</h2>
+            </div>
+            <a class="text-link" href="#products" data-t="viewcatalog"
+              >View catalog →</a
+            >
+          </div>
+          <div class="products" id="productGrid"></div>
+        </section>
+        <section class="shell section wide-cta" id="partner">
+          <div class="copy">
+            <div class="eyebrow" style="color: #d7ee98" data-t="growth">
+              Grow with Sawa
+            </div>
+            <h2 data-t="distributorTitle">
+              Bring remarkable food to your market.
+            </h2>
+            <p data-t="distributorText">
+              Join an experienced regional network. We partner with distributors
+              and retailers who care about quality as much as we do.
+            </p>
+            <div class="wide-cta-actions">
+              <a
+                class="btn"
+                id="waPartner"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                data-t="apply"
+                >Chat on WhatsApp →</a
+              ><a
+                class="btn light"
+                id="showPartnerForm"
+                href="#partnerForm"
+                data-t="applyForm"
+                >Or fill the partnership form</a
+              >
+            </div>
+          </div>
+          <img
+            src="img/factory-example.jpg"
+            alt="Food store shelves"
+            onerror="
+              this.onerror = null;
+              this.src = SAWA_IMG_FALLBACK;
+            "
+          />
+        </section>
+        <section class="shell section why" id="brands">
+          <img
+            class="why-image"
+            src="https://images.unsplash.com/photo-1543083477-4f785aeafaa9?auto=format&fit=crop&w=1000&q=80"
+            alt="Fresh ingredients"
+            onerror="
+              this.onerror = null;
+              this.src = SAWA_IMG_FALLBACK;
+            "
+          />
+          <div>
+            <div class="eyebrow" data-t="ourStandard">Our standard</div>
+            <h2 data-t="whyTitle">Food you can feel good about sharing.</h2>
+            <p style="color: var(--muted)" data-t="whyText">
+              Every product we introduce is assessed for quality, consistency,
+              and its place at the table.
+            </p>
+            <div class="feature">
+              <i>✓</i>
+              <div>
+                <b data-t="f1">Thoughtfully sourced</b>
+                <p data-t="f1p">
+                  We work directly with makers who take their craft seriously.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <i>✓</i>
+              <div>
+                <b data-t="f2">Reliable supply</b>
+                <p data-t="f2p">
+                  Responsive logistics and local market knowledge, end to end.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <i>✓</i>
+              <div>
+                <b data-t="f3">Built for partnership</b>
+                <p data-t="f3p">
+                  Useful support for retailers, distributors, and growing
+                  brands.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="shell section" id="stores">
+          <div class="locator sawa-locator">
+            <div class="sawa-locator-copy">
+              <div class="eyebrow" data-t="find">Find Sawa near you</div>
+              <h2 data-t="locatorTitle">Where to buy</h2>
+              <p style="color: var(--muted)" data-t="locatorText">
+                Find a store or distributor carrying the products you love.
+              </p>
+              <label
+                class="sawa-country-label"
+                for="sawaCountry"
+                data-t="choosecountry"
+                >Choose your country</label
+              >
+              <select
+                class="field"
+                id="sawaCountry"
+                aria-label="Choose your country"
+              >
+                <option value="">Choose your country</option>
+                <option value="Egypt">Egypt</option>
+                <option value="Saudi Arabia">Saudi Arabia</option>
+                <option value="UAE">UAE</option>
+                <option value="Jordan">Jordan</option>
+              </select>
+              <button
+                class="btn"
+                id="sawaFindStores"
+                type="button"
+                style="margin-top: 7px"
+                data-t="findstores"
+              >
+                Find stores <span>→</span>
+              </button>
+              <div class="sawa-locator-hint" data-t="locatorHint">
+                Choose a country to see every supported city and partner
+                location on the map.
+              </div>
+            </div>
+            <div class="map sawa-preview-map" id="sawaPreviewMap">
+              <div class="sawa-map-overlay">
+                <span class="sawa-map-dot"></span>
+                <span data-t="mapPreview">Interactive store map</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="sawa-location-results"
+            id="sawaLocationResults"
+            aria-live="polite"
+            hidden
+          ></div>
+        </section>
+        <section class="shell newsletter">
+          <h2 data-t="newsTitle">Good things, in your inbox.</h2>
+          <p data-t="newsText">
+            New arrivals, useful ideas, and updates from the Sawa community.
+          </p>
+          <form class="subscribe" onsubmit="submitNewsletter(event)">
+            <input
+              required
+              type="email"
+              placeholder="Your email address"
+              data-ph="email"
+            /><button class="btn" data-t="subscribe">Subscribe</button>
+          </form>
+          <div class="notice" id="newsNotice" data-t="subscribed">
+            Thanks — you’re on the list.
+          </div>
+        </section>
+      </main>
+      <section
+        id="productDetail"
+        class="product-detail-page"
+        hidden
+        aria-live="polite"
+      ></section>
+      <div class="social-float" id="socialFloat">
+        <div class="social-float-card" id="socialFloatLinks" aria-hidden="true">
+          <div class="social-icons youtube">
+            <p>@Youtube</p>
+            <a
+              href="#"
+              id="socialYoutubeFloat"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow YouTube"
+              >Follow</a
+            >
+            <svg viewBox="0 0 461.001 461.001" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M365.257 67.393H95.744C42.866 67.393 0 110.259 0 163.137v134.728c0 52.878 42.866 95.744 95.744 95.744h269.513c52.878 0 95.744-42.866 95.744-95.744V163.137c0-52.878-42.866-95.744-95.744-95.744ZM300.506 237.056l-126.06 60.123c-3.359 1.602-7.239-.847-7.239-4.568V168.607c0-3.774 3.982-6.22 7.348-4.514l126.06 63.881c3.748 1.899 3.683 7.274-.109 9.082Z"
+              />
+            </svg>
+          </div>
+          <div class="social-icons tiktok">
+            <p>@TikTok</p>
+            <a
+              href="#"
+              id="socialTiktokFloat"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow TikTok"
+              >Follow</a
+            >
+            <svg viewBox="0 0 512 512" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M412.19 118.66a109.27 109.27 0 0 1-9.45-5.5 132.87 132.87 0 0 1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14 23.9 350 16 350.13 16h-82.44v318.78c0 4.28 0 8.51-.18 12.69 0 .52-.05 1-.08 1.56 0 .23 0 .47-.05.71v.18a70 70 0 0 1-35.22 55.56 68.8 68.8 0 0 1-34.11 9c-38.41 0-69.54-31.32-69.54-70s31.13-70 69.54-70a68.9 68.9 0 0 1 21.41 3.39l.1-83.94a153.14 153.14 0 0 0-118 34.52 161.79 161.79 0 0 0-35.3 43.53c-3.48 6-16.61 30.11-18.2 69.24-1 22.21 5.67 45.22 8.85 54.73v.2c2 5.6 9.75 24.71 22.38 40.82A167.53 167.53 0 0 0 115 470.66v-.2l.2.2C155.11 497.78 199.36 496 199.36 496c7.66-.31 33.32 0 62.46-13.81 32.32-15.31 50.72-38.12 50.72-38.12a158.46 158.46 0 0 0 27.64-45.93c7.46-19.61 9.95-43.13 9.95-52.53V176.49c1 .6 14.32 9.41 14.32 9.41s19.19 12.3 49.13 20.31c21.48 5.7 50.42 6.9 50.42 6.9v-81.84c-9.17 1.1-29.76-2.1-50.84-12.61Z"
+              />
+            </svg>
+          </div>
+          <div class="social-icons instagram">
+            <p>@Instagram</p>
+            <a
+              href="#"
+              id="socialInstagramFloat"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow Instagram"
+              >Follow</a
+            >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 0 1 1.772 1.153 4.902 4.902 0 0 1 1.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 0 1-1.153 1.772 4.902 4.902 0 0 1-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 0 1-1.772-1.153 4.902 4.902 0 0 1-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 0 1 1.153-1.772A4.902 4.902 0 0 1 5.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63ZM12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27Zm5.338-3.205a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"
+              />
+            </svg>
+          </div>
+        </div>
+        <button
+          class="social-toggle"
+          id="socialToggle"
+          type="button"
+          aria-label="Open social media links"
+          aria-expanded="false"
+          aria-controls="socialFloatLinks"
+        ><img src="img/22062023-scaled-1.png" alt="">
+        </button>
+        <a
+          class="whatsapp-float"
+          id="waFloat"
+          href="#"
+          target="_blank"
+          rel="noopener"
+          aria-label="WhatsApp Business"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .4 5.2.4 11.7c0 2.1.6 4.2 1.7 6L.3 24l6.5-1.7a11.7 11.7 0 0 0 5.3 1.3h.1c6.4 0 11.7-5.2 11.7-11.7 0-3.1-1.2-6.1-3.4-8.4ZM12.1 21.5h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 1 1 8.5 4.7Z"
+            />
+            <path
+              class="social-fill"
+              d="M17.8 14.5c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.2-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4-.1-.6c-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.4 4.6.8.3 1.5.5 2 .6.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.4Z"
+            />
+          </svg>
+        </a>
+      </div>
+      <footer class="footer">
+        <div class="shell foot-grid">
+          <div>
+            <a class="brand" href="#home"><i class="seed"></i>Sawa Food</a>
+            <p data-t="footText">
+              Making excellent food easier to discover, distribute, and enjoy
+              across the region.
+            </p>
+          </div>
+          <div>
+            <h4 data-t="discover">Discover</h4>
+            <a href="#products" data-t="products">Products</a
+            ><a href="#brands" data-t="manufacturers">Manufacturers</a
+            ><a href="#stores" data-t="where">Where to buy</a>
+          </div>
+          <div>
+            <h4 data-t="business">For business</h4>
+            <a
+              href="#partner"
+              onclick="openForm('wholesale')"
+              data-t="wholesale"
+              >Wholesale</a
+            ><a
+              href="#partner"
+              onclick="openForm('distribution')"
+              data-t="distribution"
+              >Distribution</a
+            ><a href="#partner" data-t="retail">Retail partnerships</a>
+          </div>
+          <div>
+            <h4 data-t="company">Company</h4>
+            <a href="#home" data-t="about">About Sawa</a
+            ><a href="#home" data-t="contact">Contact</a
+            ><a
+              class="whatsapp-btn"
+              id="waFooter"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              style="
+                display: inline-flex;
+                padding: 9px 12px;
+                border-radius: 7px;
+                color: #fff !important;
+                margin-top: 10px;
+              "
+              >WhatsApp Business</a
+            >
+          </div>
+        </div>
+        <div class="social-cards">
+          <div class="footer-social-card" aria-label="Social media">
+            <div class="social-icons youtube">
+              <a
+                id="socialYoutubeFooter"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                aria-label="Follow YouTube"
+                >Follow</a
+              ><svg viewBox="0 0 461.001 461.001" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M365.257 67.393H95.744C42.866 67.393 0 110.259 0 163.137v134.728c0 52.878 42.866 95.744 95.744 95.744h269.513c52.878 0 95.744-42.866 95.744-95.744V163.137c0-52.878-42.866-95.744-95.744-95.744ZM300.506 237.056l-126.06 60.123c-3.359 1.602-7.239-.847-7.239-4.568V168.607c0-3.774 3.982-6.22 7.348-4.514l126.06 63.881c3.748 1.899 3.683 7.274-.109 9.082Z"
+                />
+              </svg>
+            </div>
+            <div class="social-icons tiktok">
+              <a
+                id="socialTiktokFooter"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                aria-label="Follow TikTok"
+                >Follow</a
+              ><svg viewBox="0 0 512 512" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M412.19 118.66a109.27 109.27 0 0 1-9.45-5.5 132.87 132.87 0 0 1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14 23.9 350 16 350.13 16h-82.44v318.78c0 4.28 0 8.51-.18 12.69 0 .52-.05 1-.08 1.56 0 .23 0 .47-.05.71v.18a70 70 0 0 1-35.22 55.56 68.8 68.8 0 0 1-34.11 9c-38.41 0-69.54-31.32-69.54-70s31.13-70 69.54-70a68.9 68.9 0 0 1 21.41 3.39l.1-83.94a153.14 153.14 0 0 0-118 34.52 161.79 161.79 0 0 0-35.3 43.53c-3.48 6-16.61 30.11-18.2 69.24-1 22.21 5.67 45.22 8.85 54.73v.2c2 5.6 9.75 24.71 22.38 40.82A167.53 167.53 0 0 0 115 470.66v-.2l.2.2C155.11 497.78 199.36 496 199.36 496c7.66-.31 33.32 0 62.46-13.81 32.32-15.31 50.72-38.12 50.72-38.12a158.46 158.46 0 0 0 27.64-45.93c7.46-19.61 9.95-43.13 9.95-52.53V176.49c1 .6 14.32 9.41 14.32 9.41s19.19 12.3 49.13 20.31c21.48 5.7 50.42 6.9 50.42 6.9v-81.84c-9.17 1.1-29.76-2.1-50.84-12.61Z"
+                />
+              </svg>
+            </div>
+            <div class="social-icons instagram">
+              <a
+                id="socialInstagramFooter"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                aria-label="Follow Instagram"
+                >Follow</a
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 0 1 1.772 1.153 4.902 4.902 0 0 1 1.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 0 1-1.153 1.772 4.902 4.902 0 0 1-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 0 1-1.772-1.153 4.902 4.902 0 0 1-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 0 1 1.153-1.772A4.902 4.902 0 0 1 5.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63ZM12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27Zm5.338-3.205a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="shell copyr">
+          <span
+            >© 2026 Sawa Food.
+            <span data-t="rights">All rights reserved.</span></span
+          ><span>Privacy · Terms · Cookies</span>
+        </div>
+      </footer>
+    </div>
+    <div class="modal" id="formModal">
+      <form class="dialog" onsubmit="submitLead(event)">
+        <button class="close" type="button" onclick="closeForm()">×</button>
+        <div class="eyebrow" id="formEyebrow">PARTNERSHIPS</div>
+        <h2 id="formTitle">Wholesale inquiry</h2>
+        <p id="formCopy">
+          Tell us a little about your business and our team will respond
+          shortly.
+        </p>
+        <input
+          class="field"
+          required
+          placeholder="Full name"
+          data-ph="name"
+        /><input
+          class="field"
+          required
+          type="tel"
+          placeholder="WhatsApp number"
+          data-ph="whatsapp"
+        /><input
+          class="field"
+          required
+          placeholder="Company name"
+          data-ph="companyName"
+        /><select class="field">
+          <option>Egypt</option>
+          <option>Saudi Arabia</option>
+          <option>UAE</option>
+          <option>Kuwait</option></select
+        ><textarea
+          class="field"
+          placeholder="What products are you interested in?"
+          data-ph="interest"
+        ></textarea
+        ><label
+          style="
+            font-size: 12px;
+            color: var(--muted);
+            display: block;
+            margin: 4px 0 12px;
+          "
+          ><input required type="checkbox" />
+          <span data-t="consent"
+            >I agree that Sawa Food may contact me about this request.</span
+          ></label
+        ><button class="btn" style="width: 100%" data-t="send">
+          Send request
+        </button>
+        <div class="notice" id="formNotice">
+          Request received — reference #SAW-2048
+        </div>
+      </form>
+    </div>
+    <!-- Admin area -->
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Easy-edit config: change images / WhatsApp / social links here -->
+    <script src="js/config.js"></script>
+
+    <!-- Site scripts, loaded in order after Leaflet so map init can use it -->
+    <script src="js/01-data.js"></script>
+    <script src="js/02-site-core.js"></script>
+    <script src="js/03-partner-form.js"></script>
+    <script src="js/04-store-locator.js"></script>
+    <script src="js/05-hero-carousel.js"></script>
+    <script src="js/06-partner-notification.js"></script>
+    <script src="js/07-social-media.js"></script>
+  </body>
+</html>
